@@ -13,8 +13,10 @@ window.onload = function () {
           
           console.log(myImage.width,typeof(myImage.height));
           fabric.Image.fromURL(myImage.src, function (img){
-              img.height=400;
-              img.width=400;
+            console.dir(img)
+            img.scaleX=400/myImage.width;
+            img.scaleY=400/myImage.height;
+            // img.scaleToWidth(400);
             canvas.add(img);
         });
          
